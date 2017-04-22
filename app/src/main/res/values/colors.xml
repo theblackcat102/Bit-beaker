@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bitbeaker_primary">#205081</color>
+    <color name="bitbeaker_primary_dark">#2E3D54</color>
+    <color name="bitbeaker_accent">#3572B0</color>
+    <color name="bitbeaker_control_activated">#2A67A5</color>
+    <color name="bitbeaker_control">#707070</color>
+    <color name="bitbeaker_light_gray">#F5F5F5</color>
+
+    <color name="pressed_bitbeaker">#CC5A88B7</color>
+    <color name="diff_image_deleted">#cc0000</color>
+    <color name="diff_image_added">#99cc00</color>
+    <color name="tag_background">#14cccccc</color>
+    <color name="tag_border">#33000000</color>
+    <color name="query_background">#33000000</color>
+</resources>

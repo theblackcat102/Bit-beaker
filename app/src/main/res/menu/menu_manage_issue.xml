@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ab_icon_refresh"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/menu_update"
+        android:icon="@drawable/ab_icon_edit"
+        android:title="@string/update_issue"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/menu_resolve"
+        android:icon="@drawable/ic_action_resolve"
+        android:title="@string/resolve"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/menu_reopen"
+        android:icon="@drawable/ic_action_reopen"
+        android:title="@string/reopen"
+        android:visible="false"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@drawable/ab_icon_add"
+        android:title="@string/add"
+        app:showAsAction="ifRoom">
+    </item>
+
+</menu>

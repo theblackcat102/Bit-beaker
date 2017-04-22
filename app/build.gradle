@@ -1,0 +1,187 @@
+apply plugin: 'com.android.application'
+apply from: rootProject.file('gradle/check.gradle')
+
+final String bitbeakerApplicationId = 'fi.iki.kuitsi.bitbeaker'
+final String supportLibVersion = "23.3.0"
+final int defaultMinSdk = 16
+final int minSdk = hasProperty('minSdk') ? minSdk.toInteger() : defaultMinSdk
+
+def credentials(String key, String secret) {
+    def credentials = [key, secret]
+    def s = credentials.collect { it.replace("\"", "") }.join(":")
+    return s.bytes.encodeBase64().toString()
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion defaultMinSdk
+        targetSdkVersion 23
+        versionName "3.2.1"
+        versionCode 31
+        applicationId bitbeakerApplicationId
+        resConfigs "en", "cs", "de", "es", "fi", "fr", "hi", "hu", "in", "it", "ja", "ko", "nl", "pl", "pt", "ru", "uk", "zh"
+        resValue "string", "account_type", "${applicationId}"
+        resValue "string", "content_authority", "${applicationId}"
+        resValue "string", "share_authority", "${applicationId}.shareprovider"
+        buildConfigField "int", "ROBOLECTRIC_SDK", "23"
+        vectorDrawables {
+            generatedDensities = ["mdpi", "hdpi", "xhdpi", "xxhdpi"]
+        }
+    }
+
+    splits {
+        density {
+            enable true
+            exclude "ldpi", "xxxhdpi"
+        }
+    }
+
+    dexOptions {
+        // http://stackoverflow.com/questions/21125302/gradle-builds-really-slow-with-a-multi-project-structure
+        preDexLibraries = !isContinuousIntegration
+    }
+
+    signingConfigs {
+        release // this is initialized using gradle.properties
+    }
+    if (project.hasProperty('storeFile') &&
+            project.hasProperty('storePassword') &&
+            project.hasProperty('keyAlias') &&
+            project.hasProperty('keyPassword')) {
+        android.signingConfigs.release.storeFile = file(storeFile)
+        android.signingConfigs.release.storePassword = storePassword
+        android.signingConfigs.release.keyAlias = keyAlias
+        android.signingConfigs.release.keyPassword = keyPassword
+    } else {
+        buildTypes.release.signingConfig = null
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == 'release') {
+            variant.outputs.each { output ->
+                def file = output.outputFile
+                output.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.versionName + ".apk"))
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            versionNameSuffix " (" + getMercurialHash() +")"
+        }
+        release {
+            // maybe some day these would get enabled
+            minifyEnabled false
+            shrinkResources false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        dev {
+            minSdkVersion minSdk
+            applicationId bitbeakerApplicationId + '.dev'
+            buildConfigField "String", "API_KEY", bitbucketDevApiKey
+            buildConfigField "String", "CALLBACK_SCHEME", bitbucketDevCallbackScheme
+            buildConfigField "String", "CALLBACK_HOST", bitbucketDevCallbackHost
+            buildConfigField "String", "CLIENT_CREDENTIALS", "\"${credentials(bitbucketDevApiKey, bitbucketDevApiSecret)}\""
+
+            resValue "string", "account_type", "${applicationId}"
+            resValue "string", "content_authority", "${applicationId}"
+            resValue "string", "share_authority", "${applicationId}.shareprovider"
+            resValue "string", "callback_scheme", bitbucketDevCallbackScheme
+            resValue "string", "callback_host", bitbucketDevCallbackHost
+        }
+        prod {
+            buildConfigField "String", "API_KEY", bitbucketProdApiKey
+            buildConfigField "String", "CALLBACK_SCHEME", bitbucketProdCallbackScheme
+            buildConfigField "String", "CALLBACK_HOST", bitbucketProdCallbackHost
+            buildConfigField "String", "CLIENT_CREDENTIALS", "\"${credentials(bitbucketProdApiKey, bitbucketProdApiSecret)}\""
+
+            resValue "string", "callback_scheme", bitbucketProdCallbackScheme
+            resValue "string", "callback_host", bitbucketProdCallbackHost
+        }
+    }
+
+    variantFilter { variant ->
+        if (variant.buildType.name.equals('release') && variant.flavors.first().name.equals('dev'))
+            variant.setIgnore true
+    }
+
+    lintOptions {
+        abortOnError false
+        xmlReport false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'README.md' // this comes from lib/SimpleRssParser.jar
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    testOptions {
+        unitTests.all {
+            testLogging {
+                events "skipped", "failed", "standardOut", "standardError"
+                exceptionFormat = 'full'
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
+            }
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor "com.google.auto.value:auto-value:1.2"
+    provided 'com.jakewharton.auto.value:auto-value-annotations:1.2-update1'
+    compile 'com.google.dagger:dagger:2.6'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
+    provided "com.android.support:support-annotations:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:percent:${supportLibVersion}"
+    compile "com.android.support:preference-v14:${supportLibVersion}"
+    compile 'com.github.dgyuri.robospice-minimal:robospice:bdb4722'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'de.greenrobot:eventbus:2.2.1'
+    compile 'com.madgag:markdownj-core:0.4.1'
+    compile 'com.github.chrisbanes.photoview:library:1.2.3'
+    compile 'com.nispok:snackbar:2.10.9'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    compile 'com.jakewharton:butterknife:8.3.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.3.0'
+    compile('com.afollestad.material-dialogs:commons:0.8.5.1@aar') {
+        transitive = true
+    }
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.google.truth:truth:0.31'
+    testCompile 'org.robolectric:robolectric:3.2.2'
+    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
+    testCompile 'org.mockito:mockito-core:2.5.5'
+}
+
+if (hasProperty('xlint')) {
+  tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:unchecked'
+    options.compilerArgs << '-Xlint:deprecation'
+  }
+}

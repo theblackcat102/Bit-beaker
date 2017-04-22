@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wiki">Wiki</string>
+    <string name="changesets">Changesets</string>
+    <string name="repositories">Repositories</string>
+    <string name="description">Description</string>
+    <string name="files">Files</string>
+    <string name="changeset_changes">Changes</string>
+    <string name="changeset_comments">Comments</string>
+    <string name="source">Source</string>
+    <string name="branch">Branch</string>
+    <string name="tag">Tag</string>
+    <string name="issues">Issues</string>
+    <string name="milestones">Milestones</string>
+    <string name="log_out">Log out</string>
+    <string name="search_issue">Search for issues</string>
+    <string name="search_repo">Search for repositories</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="clear_cache">Clear cache</string>
+    <string name="settings">Settings</string>
+    <string name="new_issue">Create new issue</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="type">Type</string>
+    <string name="submit_new_issue">Submit new issue</string>
+    <string name="issue_filter_prompt">Filter issues</string>
+    <string name="status">Status</string>
+    <string name="menu_source">Source</string>
+    <string name="submit_comment">Submit</string>
+    <string name="new_comment_hint">Leave a comment</string>
+    <string name="add">Add</string>
+    <string name="proceed">Proceed</string>
+    <string name="submit">Submit</string>
+    <string name="priority">Priority</string>
+    <string name="follow">Follow</string>
+    <string name="followers">Followers</string>
+    <string name="unable_to_write_external">%1$s Unable to write to external storage.</string>
+    <string name="unable_to_create_dir">Unable to create directory %1$s. Maybe the SD card is not mounted?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_retry">Retry</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="dialog_close">Close</string>
+    <string name="open_link_failed">Unable to open link</string>
+    <string name="share">Share</string>
+    <string name="contribute">Contribute</string>
+    <string name="contribute_dialog_title">Help making Bitbeaker better</string>
+    <string name="contribute_beta_releases">Participate in Beta testing</string>
+
+    <string name="dialog_oauth_not_authorized">You are not authorized!</string>
+    <string name="dialog_oauth_request_token_fetch_failed">Couldn\'t get a Request Token from Bitbucket!</string>
+    <string name="dialog_oauth_request_token_fetch_failed_reason">Possible reason: Your system clock may not be on time.</string>
+    <string name="dialog_oauth_access_token_fetch_failed">Couldn\'t get an Access Token from Bitbucket!</string>
+    <string name="dialog_oauth_load_failed">Couldn\'t load Bitbucket or related website!</string>
+
+    <string name="oauth_step1">Step 1: Requesting a Request Token from Bitbucket</string>
+    <string name="oauth_step2">Step 2: Login to Bitbucket and grant access for Bitbeaker</string>
+    <string name="oauth_step3">Step 3: Requesting an Access Token</string>
+    <string name="oauth_step4">Step 4: Get user data</string>
+
+    <string name="navigationdrawer_open">Open navigation drawer</string>
+    <string name="navigationdrawer_close">Close navigation drawer</string>
+    <string name="navigationdrawer_issue_tracker">Issue tracker</string>
+
+    <!-- MyActivity.java -->
+    <string name="AsyncErrorMSG">There was a problem retrieving and/or processing data from Bitbucket.org. Checking your data connectivity and trying again might help.</string>
+
+    <!-- RepositoryActivity.java -->
+    <string name="no_branches">No branches found.</string>
+    <string name="no_changesets_error">This repository may have no changesets yet, or another error happened.</string>
+    <string name="events">Events</string>
+    <string name="please_wait_still_loading">Still loading, please try again.</string>
+    <string name="repository_copy_url">Copy URL</string>
+    <string name="repository_url_copied">URL copied to clipboard</string>
+    <string name="repository">Repository</string>
+
+    <string name="event_type_commit">Committed to repository</string>
+    <string name="event_type_pushed">Pushed to repository</string>
+    <string name="event_type_fork">Forked repository</string>
+    <string name="event_type_mq">Created patch queue</string>
+    <string name="event_type_create">Created repository</string>
+    <string name="event_type_delete">Deleted repository</string>
+    <string name="event_type_issue_update">Updated issue</string>
+    <string name="event_type_issue_comment">Updated issue comment</string>
+    <string name="event_type_wiki_updated">Updated wiki page</string>
+    <string name="event_type_wiki_created">Created wiki page</string>
+    <string name="event_type_wiki_deleted">Deleted wiki page</string>
+    <string name="event_type_file_uploaded">Uploaded file</string>
+    <string name="event_type_strip">Stripped repository</string>
+    <string name="event_type_report_issue">Reported issue</string>
+    <string name="event_type_start_follow_repo">Started following the repository</string>
+    <string name="event_type_stop_follow_repo">Stopped following the repository</string>
+    <string name="event_type_start_follow_issue">Started following an issue</string>
+    <string name="event_type_stop_follow_issue">Stopped following issue</string>
+    <string name="event_type_start_follow_user">Started following user</string>
+    <string name="event_type_stop_follow_user">Stopped following user</string>
+    <string name="event_type_pullrequest_created">Created pull request</string>
+    <string name="event_type_pullrequest_updated">Updated pull request</string>
+    <string name="event_type_pullrequest_fulfilled">Accepted pull request</string>
+    <string name="event_type_pullrequest_rejected">Rejected pull request</string>
+    <string name="event_type_pullrequest_superseded">Marked pull request as superseded</string>
+    <string name="event_type_pullrequest_comment_created">Created pull request comment</string>
+    <string name="event_type_pullrequest_comment_updated">Updated pull request comment</string>
+    <string name="event_type_pullrequest_comment_deleted">Deleted pull request comment</string>
+    <string name="event_type_pullrequest_like">Approved a pull request</string>
+    <string name="event_type_pullrequest_unlike">Unapproved a pull request</string>
+    <string name="event_type_cset_comment_updated">Updated changeset comment</string>
+    <string name="event_type_cset_comment_deleted">Deleted changeset comment</string>
+    <string name="event_type_cset_comment_created">Created changeset comment</string>
+    <string name="event_type_cset_like">Approved a changeset</string>
+    <string name="event_type_cset_unlike">Unapproved a changeset</string>
+    <string name="event_type_team_access_gained_admin">Gained admin rights</string>
+    <string name="event_type_team_access_gained_collab">Gained collaboration rights</string>
+    <string name="event_type_team_lost_access">Lost access to team account</string>
+    <string name="event_type_team_access_changed_admin">Changed admin access on team</string>
+    <string name="event_type_team_access_changed_collab">Changed collaborator access on team</string>
+
+    <string name="favorites_add">Add to favorites</string>
+    <string name="favorites_remove">Remove from favorites</string>
+
+    <!-- ChangesetActivity.java -->
+    <string name="changeset">Changeset:</string>
+    <string name="author_label">Author:</string>
+    <string name="branch_label">Branch:</string>
+    <string name="tags_label">Tags:</string>
+
+    <!-- LoginActivity.java -->
+    <string name="login">Login</string>
+
+    <!-- DiffActivity.java -->
+    <string name="diff_not_found">Diff not found for requested file.</string>
+
+    <!-- IssuesActivity.java -->
+    <plurals name="comments">
+        <item quantity="one">%d comment</item>
+        <item quantity="other">%d comments</item>
+    </plurals>
+    <string name="issues_menu_any_status">Any status</string>
+    <string name="issues_menu_custom_query">Custom query</string>
+    <string name="issues_menu_all_kind">All kind</string>
+    <string name="issues_not_found">No issues found.</string>
+    <string name="last_updated">Last updated</string>
+
+    <!-- NewIssueCommentActivity.java -->
+    <string name="add_comment">Add a comment</string>
+    <string name="comment_submitted">New comment submitted!</string>
+
+    <!-- NewIssueActivity.java -->
+    <string name="report_new_issue">Report new issue</string>
+    <string name="issue_submitted">New issue submitted!</string>
+
+    <!-- UpdateIssueActivity.java -->
+    <string name="update_issue">Update issue</string>
+    <string name="issue_updated">Updated issue submitted!</string>
+
+    <!-- RepositoriesActivity.java -->
+    <string name="your_repositories">Your repositories</string>
+    <string name="fork_of">Fork of</string>
+    <string name="favorites">Favorites</string>
+    <string name="dialog_remove_own_admin_rights_title">Remove rights</string>
+    <string name="dialog_remove_own_admin_rights_message">Do you really want to remove your access rights to the \'%1$s\' repository?</string>
+    <string name="remove_own_admin_rights_successful">You are no longer an admin of the project.</string>
+    <string name="remove_own_admin_rights_forbidden">Error: you do not have the required rights for this project.</string>
+    <string name="remove_own_admin_rights_error">Error %1$s</string>
+
+    <string name="repositories_sorting_order">Sorting order</string>
+    <string name="repositories_sorting_order_owner_asc">Owner, ascending</string>
+    <string name="repositories_sorting_order_reponame_asc">Repository, ascending</string>
+    <string name="repositories_sorting_order_updated_desc">Updated, descending</string>
+
+    <!-- SearchableActivity -->
+    <string name="please_enter_more_text">Please enter at least 3 letters.</string>
+    <string name="no_repositories_found">No repositories found.</string>
+    <string name="search_results_title">Results for \"%1$s\"</string>
+
+    <!-- SourceBrowserActivity -->
+    <string name="file_not_found">The folder "%1$s" does not exist in the "%2$s" branch, or there was a problem retrieving and/or processing data from Bitbucket.org</string>
+
+    <!-- IssueActivity.java -->
+    <string name="issue_id">Issue #%1$d</string>
+    <string name="issue_comments">Comments:</string>
+    <string name="issue_details_unavailable">Contents updated: details not available via API</string>
+    <string name="issueStatusLabel">Status:</string>
+    <string name="issueTypeLabel">Type:</string>
+    <string name="issuePriorityLabel">Priority:</string>
+    <string name="issueAuthorLabel">By:</string>
+    <string name="issueOnTimestampLabel">on</string>
+    <string name="issueReporterAnonymous">Anonymous</string>
+    <string name="issueResponsible">Assignee:</string>
+    <string name="issueResponsibleHint">Username</string>
+
+    <!-- LauncherActivity.java -->
+    <string name="changeset_not_found">Changeset not found!</string>
+    <string name="link_not_supported">Unsupported link type!</string>
+
+    <!-- These Strings are translated versions of various Strings used in API queries if we need to show them to user.
+         Mappings to real API Strings are made in Helper class -->
+    <string name="api_status_new">New</string>
+    <string name="api_status_open">Open</string>
+    <string name="api_status_resolved">Resolved</string>
+    <string name="api_status_on_hold">On Hold</string>
+    <string name="api_status_invalid">Invalid</string>
+    <string name="api_status_duplicate">Duplicate</string>
+    <string name="api_status_wontfix">Won\'t Fix</string>
+    <string name="api_status_closed">Closed</string>
+    <string name="api_priority_trivial">Trivial</string>
+    <string name="api_priority_minor">Minor</string>
+    <string name="api_priority_major">Major</string>
+    <string name="api_priority_critical">Critical</string>
+    <string name="api_priority_blocker">Blocker</string>
+    <string name="api_kind_bug">Bug</string>
+    <string name="api_kind_enhancement">Enhancement</string>
+    <string name="api_kind_proposal">Proposal</string>
+    <string name="api_kind_task">Task</string>
+    <string name="api_changeset_files_type_added">Added</string>
+    <string name="api_changeset_files_type_modified">Modified</string>
+    <string name="api_changeset_files_type_removed">Removed</string>
+    <string name="api_pullrequest_open">open</string>
+    <string name="api_pullrequest_merged">merged</string>
+    <string name="api_pullrequest_declined">declined</string>
+
+    <!-- Settings -->
+    <string name="prefs_header_preferences_ui_title">User Interface</string>
+    <string name="prefs_header_preferences_misc_title">Miscellaneous</string>
+    <string name="prefs_header_preferences_favorites_title">Favorite repositories</string>
+    <string name="prefs_header_preferences_sync">Sync</string>
+    <string name="prefs_category_ui">User Interface</string>
+    <string name="prefs_category_misc">Miscellaneous</string>
+    <string name="prefs_category_favorites">Favorite repositories</string>
+    <string name="prefs_category_sync">Sync</string>
+    <string name="prefs_locale_title">Locale</string>
+    <string name="prefs_locale_summary">Change language. Takes full effect after application is restarted.</string>
+    <string name="prefs_locale_dialog_title">Select locale</string>
+    <string name="prefs_favoritesResetTitle">Reset favorites</string>
+    <string name="prefs_favoritesResetSummary">Reset list of favorite repositories</string>
+    <string name="prefs_favorites_export_title">Export favorites</string>
+    <string name="prefs_favorites_export_summary">Create a backup of favorite repositories to %1$s</string>
+    <string name="prefs_favorites_export_failed">Failed exporting favorites</string>
+    <string name="prefs_favorites_import_title">Import favorites</string>
+    <string name="prefs_favorites_import_summary">Restore backup of favorites from %1$s</string>
+    <string name="prefs_favorites_request_permission_message">Storage permission is needed to read and write backup file.</string>
+    <string name="prefs_about_title">About Bitbeaker</string>
+    <string name="prefs_about_translations_title">Translations</string>
+    <string name="prefs_about_translations_summary">Participate in translation project at Crowdin.com</string>
+    <string name="prefs_newsfeed_token">Newsfeed RSS token</string>
+    <string name="prefs_sync_enable_title">Notifications</string>
+    <string name="prefs_sync_enable_summary_on">Receives notifications from favorite repositories</string>
+    <string name="prefs_sync_enable_summary_off">Enable notifications for favorite repositories</string>
+    <string name="prefs_sync_interval_title">Notifications interval</string>
+    <string-array name="prefs_sync_interval_entries">
+        <item>Every 1 hour</item>
+        <item>Every 2 hours</item>
+        <item>Every 3 hours</item>
+        <item>Every 6 hours</item>
+        <item>Every 12 hours</item>
+        <item>Once a day</item>
+    </string-array>
+
+    <!-- About dialog -->
+    <string name="bitbeaker_version">Version %1$s</string>
+    <string name="about_license">This app is open source and is licensed under %1$s. More details on the license and third party libraries, graphics etc. used in this app are available at %2$s.</string>
+    <string name="about_contributors">List of contributors can be found in Bitbeaker\'s stats at Open Hub: %1$s</string>
+    <string name="about_issues">Found a bug? Have a feature request? Let us know by reporting it to our issue tracker at %1$s. You can also browse source code at %2$s and make changes by forking the project and sending a pull request.</string>
+    <string name="changelog">Changelog</string>
+    <string name="privacypolicy">Privacy Policy</string>
+
+    <!--  NewsfeedActivity -->
+    <string name="user_newsfeed">Your newsfeed</string>
+    <string name="rss_loading_failed">Loading the RSS feed failed.</string>
+    <string name="newsfeed_token_saved">Newsfeed token saved!</string>
+    <string name="newsfeed_dialog_help_title">Activate Newsfeed</string>
+    <string name="newsfeed_dialog_help">Newsfeed requires a token from a link of <i>Recent activity</i> RSS feed on Bitbucket\'s <i>Dashboard</i>. You need to insert it manually into Bitbeaker\'s preferences.</string>
+
+    <!-- PullRequestActivity -->
+    <string name="pull_requests">Pull requests</string>
+    <string name="no_open_pull_requests">There are no open pull requests.</string>
+    <string name="no_merged_pull_requests">There are no merged pull requests.</string>
+    <string name="no_declined_pull_requests">There are no declined pull requests.</string>
+
+    <!-- PullRequestCommentActivity -->
+    <string name="pull_request_comments">Pull request comments</string>
+
+    <!-- Milestones Activity -->
+    <string name="milestones_loading_error">Milestones could not be loaded.</string>
+    <plurals name="milestones_meta_issues">
+        <item quantity="one">%1$d issue, %2$d solved</item>
+        <item quantity="other">%1$d issues, %2$d solved</item>
+    </plurals>
+    <string name="milestones_meta_progress">%1$s done</string>
+    <string name="versions">Versions</string>
+    <string name="components">Components</string>
+    <string name="milestones_empty">No Milestones found.</string>
+    <string name="versions_empty">No Versions found.</string>
+    <string name="components_empty">No Components found.</string>
+
+    <string name="milestone">Milestone</string>
+    <string name="milestone_choose">No Milestone</string>
+    <string name="milestone_not_edit">Milestone not changed</string>
+    <string name="milestone_new">Create new milestone</string>
+    <string name="milestone_new_info">Enter the title of the new milestone.</string>
+    <string name="milestone_new_error">Could not create milestone.</string>
+
+    <string name="component">Component</string>
+    <string name="component_choose">No Component</string>
+    <string name="component_not_edit">Component not changed</string>
+    <string name="component_new">Create new component</string>
+    <string name="component_new_info">Enter the title of the new component.</string>
+    <string name="component_new_error">Could not create component.</string>
+
+    <string name="version">Version</string>
+    <string name="version_choose">No Version</string>
+    <string name="version_not_edit">Version not changed</string>
+    <string name="version_new">Create new version</string>
+    <string name="version_new_info">Enter the title of the new version.</string>
+    <string name="version_new_error">Could not create version.</string>
+
+    <string name="issueVersionLabel">Version:</string>
+    <string name="issueComponentLabel">Component:</string>
+    <string name="issueMilestoneLabel">Milestone:</string>
+
+    <string name="resolve">Resolve</string>
+    <string name="reopen">Reopen</string>
+
+    <string name="issue_resolve_error">Couldn\'t resolve issue. An unexpected error occurred.</string>
+
+    <!-- Notification -->
+    <plurals name="notification_title">
+        <item quantity="one">New event</item>
+        <item quantity="other">New events</item>
+    </plurals>
+    <plurals name="notification_number">
+        <item quantity="one">new event</item>
+        <item quantity="other">%d new events</item>
+    </plurals>
+
+    <plurals name="tag_number">
+        <item quantity="one">%d tag</item>
+        <item quantity="other">%d tags</item>
+    </plurals>
+
+</resources>

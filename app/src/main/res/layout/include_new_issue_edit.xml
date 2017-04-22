@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/include_new_issue">
+
+    <!-- Issue title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_title"
+        android:text="@string/title" />
+
+    <EditText
+        android:id="@id/new_issue_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <!-- Issue Content -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_content"
+        android:text="@string/content" />
+
+    <EditText
+        android:id="@id/new_issue_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textLongMessage|textCapSentences|textAutoCorrect|textMultiLine"
+        android:minLines="3" />
+
+</merge>

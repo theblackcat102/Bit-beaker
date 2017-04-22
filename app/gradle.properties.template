@@ -1,0 +1,26 @@
+# IMPORTANT INFO:
+# To access BitBucket via OAuth it is necessary to register an OAuth consumer with its own key and secret.
+#
+# For your own developing, register your own consumer.
+# You will then receive a key and a secret from BitBucket for your application.
+# More detailed information here:
+# https://confluence.atlassian.com/display/BITBUCKET/OAuth+on+Bitbucket
+#
+# !DO NEVER EVER SHARE YOUR KEY OR YOUR SECRET WITH YOUR SOURCE CODE!
+#
+# Rename this template file to gradle.properties.
+#
+bitbucketDevApiKey = "Insert your OAuth consumer key here"
+bitbucketDevApiSecret = "Insert your OAuth consumer secret here"
+bitbucketDevCallbackScheme = "Insert the scheme of your OAuth 2.0 callback URL here"
+bitbucketDevCallbackHost = "Insert the host of your OAuth 2.0 callback URL here"
+
+# These are used only when releasing new version to Google Play. Just ignore them.
+bitbucketProdApiKey = ""
+bitbucketProdApiSecret = ""
+bitbucketProdCallbackScheme = ""
+bitbucketProdCallbackHost = ""
+#storeFile =
+#storePassword =
+#keyAlias =
+#keyPassword =

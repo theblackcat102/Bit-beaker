@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- please leave these as is -->
+    <string name="app_name">Bitbeaker</string>
+    <string name="nothing"></string>
+    <string-array name="prefs_sync_interval_entry_values">
+        <item>3600</item>
+        <item>7200</item>
+        <item>10800</item>
+        <item>21600</item>
+        <item>43200</item>
+        <item>86400</item>
+    </string-array>
+    <string name="url_ssh">SSH</string>
+    <string name="url_https">HTTPS</string>
+    <string name="url_web">WWW</string>
+</resources>

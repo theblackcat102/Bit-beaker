@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/nav_group1"
+        android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_newsfeed"
+            android:icon="@drawable/ab_icon_feed"
+            android:title="@string/user_newsfeed"
+            />
+        <item
+            android:id="@+id/nav_repositories"
+            android:icon="@drawable/ab_icon_repositories"
+            android:title="@string/your_repositories"
+            android:checked="true"
+            />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ab_icon_search"
+            android:title="@string/search"
+            />
+    </group>
+
+    <group
+        android:id="@+id/nav_group2"
+        android:checkableBehavior="none"
+        >
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ab_icon_settings"
+            android:title="@string/settings"
+            />
+        <item
+            android:id="@+id/nav_contribute"
+            android:icon="@drawable/ab_icon_translations"
+            android:title="@string/contribute"
+            />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ab_icon_about"
+            android:title="@string/prefs_about_title"
+            />
+    </group>
+</menu>

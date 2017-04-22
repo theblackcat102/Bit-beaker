@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/prefs_category_sync">
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="sync_enabled"
+            android:title="@string/prefs_sync_enable_title"
+            android:summaryOn="@string/prefs_sync_enable_summary_on"
+            android:summaryOff="@string/prefs_sync_enable_summary_off"
+            android:defaultValue="false"
+            android:persistent="false"/>
+
+        <fi.iki.kuitsi.bitbeaker.preferences.ListPreferenceWithSummary
+            android:key="sync_interval"
+            android:title="@string/prefs_sync_interval_title"
+            android:entries="@array/prefs_sync_interval_entries"
+            android:entryValues="@array/prefs_sync_interval_entry_values"
+            android:persistent="false"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

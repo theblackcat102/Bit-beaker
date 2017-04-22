@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/include_toolbar" />
+
+    <fi.iki.kuitsi.bitbeaker.view.SlidingPanel
+        android:id="@+id/sliding_panel_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:slidingPanelCollapsedWidth="@dimen/margin_content_distance"
+        app:slidingPanelExpandedWidth="184dp"
+        >
+
+        <FrameLayout
+            android:id="@id/sliding_panel_container"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/bitbeaker_light_gray"
+            />
+
+        <FrameLayout
+            android:id="@id/fragment_container"
+            android:clickable="true"
+            android:layout_width="420dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_content_distance"
+            android:layout_marginStart="@dimen/margin_content_distance"
+            android:layout_gravity="end"
+            />
+
+    </fi.iki.kuitsi.bitbeaker.view.SlidingPanel>
+
+</LinearLayout>

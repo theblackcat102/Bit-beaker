@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="action_share" type="id" />
+    <item name="drawer_layout" type="id" />
+    <item name="fragment_container" type="id" />
+    <item name="list_container" type="id" />
+    <item name="navigation_view" type="id" />
+    <item name="progress_container" type="id" />
+    <item name="sliding_panel_container" type="id" />
+    <item name="swipe_refresh_layout" type="id" />
+    <item name="text_view_drawable_callback" type="id" />
+    <item name="toolbar" type="id" />
+
+</resources>

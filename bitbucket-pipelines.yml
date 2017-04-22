@@ -1,0 +1,8 @@
+# Android Docker image 
+image: bitriseio/docker-android
+
+pipelines:
+  default:
+    - step:
+        script:
+          - ./gradlew -Djava.awt.headless=true :app:testProdDebug

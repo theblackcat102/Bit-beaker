@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="start|center_vertical"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/issue_comment_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/keyline_margin"
+        android:layout_marginRight="@dimen/keyline_margin"
+        android:textAppearance="@style/TextAppearance.Bitbeaker.List.Primary"
+        tools:text="Primary"
+        />
+
+    <TextView
+        android:id="@+id/issue_comment_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/keyline_margin"
+        android:layout_marginRight="@dimen/keyline_margin"
+        android:textAppearance="@style/TextAppearance.Bitbeaker.List.Secondary"
+        tools:text="Secondary"
+        />
+
+</LinearLayout>

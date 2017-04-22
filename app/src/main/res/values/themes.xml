@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Bitbeaker" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColorLink">@color/bitbeaker_accent</item>
+        <item name="colorPrimary">@color/bitbeaker_primary</item>
+        <item name="colorPrimaryDark">@color/bitbeaker_primary_dark</item>
+        <item name="colorAccent">@color/bitbeaker_accent</item>
+        <item name="colorControlNormal">@color/bitbeaker_control</item>
+        <item name="colorControlActivated">@color/bitbeaker_control_activated</item>
+        <item name="actionBarStyle">@style/Widget.Bitbeaker.ActionBar</item>
+        <item name="searchViewStyle">@style/Widget.Bitbeaker.SearchView</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <style name="Theme.Bitbeaker.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/bitbeaker_primary</item>
+        <item name="colorPrimaryDark">@color/bitbeaker_primary_dark</item>
+        <item name="colorAccent">@color/bitbeaker_accent</item>
+    </style>
+</resources>

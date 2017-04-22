@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fabColorNormal" format="color" />
+        <attr name="fabColorPressed" format="color" />
+        <attr name="fabColorRipple" format="color" />
+        <attr name="fabShadow" format="reference|integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SlidingPanel">
+        <attr name="slidingPanelCollapsedWidth" format="reference|dimension" />
+        <attr name="slidingPanelExpandedWidth" format="reference|dimension" />
+    </declare-styleable>
+
+</resources>

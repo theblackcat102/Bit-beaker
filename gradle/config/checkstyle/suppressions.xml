@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+	"-//Puppy Crawl//DTD Suppressions 1.1//EN"
+	"http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+
+	<!-- Don't check files copied from another project. -->
+	<suppress checks="." files="SelectionBuilder.java"/>
+
+	<!-- Don't check package-info.java. -->
+	<suppress checks="." files="package-info.java"/>
+
+	<!-- Don't check "obsoleted" files. -->
+	<suppress checks="." files="LauncherActivity.java"/> <!-- Issue #159 -->
+
+	<!-- Don't check JavadocMethod in REST API interface definition. -->
+	<suppress checks="JavadocMethod" files="BitbucketService.java"/>
+
+	<!-- Don't check Javadoc in tests. -->
+	<suppress checks="JavadocMethod" files="(.*Test\.java)"/>
+	<suppress checks="JavadocStyle" files="(.*Test\.java)"/>
+	<suppress checks="JavadocType" files="(.*Test\.java)"/>
+
+</suppressions>

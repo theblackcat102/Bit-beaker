@@ -1,0 +1,80 @@
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+
+List<File> androidSources = android.sourceSets.inject([]) { dirs, sourceSet -> dirs + sourceSet.java.srcDirs }
+
+///////////////////////////////////////////////////
+// Checkstyle
+
+task checkstyle(type: Checkstyle) {
+
+    description 'Run Checkstyle'
+    group 'verification'
+
+    classpath = files()
+    reports { xml { destination "${project.buildDir}/outputs/reports/checkstyle.xml" } }
+    source androidSources
+
+}
+
+checkstyle {
+    configFile = file("${rootProject.projectDir}/gradle/config/checkstyle/checkstyle.xml")
+    ignoreFailures = true
+    showViolations = false
+    toolVersion = '6.10.1'
+}
+
+///////////////////////////////////////////////////
+// FindBugs
+
+task findbugs(type: FindBugs) {
+
+    description 'Run FindBugs'
+    group 'verification'
+
+    classes = files("$project.buildDir/intermediates/classes")
+
+    source androidSources
+    include '**/*.java'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html.destination = "$project.buildDir/outputs/reports/findbugs.html"
+    }
+
+    classpath = files()
+}
+
+findbugs {
+    effort = 'max'
+    ignoreFailures = true
+    reportLevel = 'high'
+    toolVersion = '3.0.1'
+}
+
+///////////////////////////////////////////////////
+// PMD
+
+task pmd(type: Pmd) {
+
+    description 'Run pmd'
+    group 'verification'
+
+    source = androidSources
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+pmd {
+    ignoreFailures = true
+    ruleSetFiles = files("${rootProject.projectDir}/gradle/config/pmd/ruleset.xml")
+    reportsDir = file("${project.buildDir}/outputs/reports")
+    toolVersion = '5.3.4'
+}
+
+check.dependsOn 'pmd'

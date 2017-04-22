@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fi.iki.kuitsi.bitbeaker" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" android:maxSdkVersion="22"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" android:maxSdkVersion="22"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" android:maxSdkVersion="22"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
+    <application android:name="Bitbeaker"
+        android:theme="@style/Theme.Bitbeaker.NoActionBar"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:allowBackup="true">
+
+        <activity android:name=".activities.LauncherActivity"/>
+
+        <activity android:name=".activities.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Bitbeaker">
+            <meta-data android:name="android.app.default_searchable" android:value=".activities.SearchableActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.GrantAccessActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:host="@string/callback_host"
+                    android:scheme="@string/callback_scheme"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.NewsfeedActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="https"
+                    android:host="bitbucket.org"
+                    android:pathPattern="/.*/rss/feed.*" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.RepositoriesActivity"
+            android:launchMode="singleTop"/>
+
+        <activity android:name=".activities.RepositoryActivity"/>
+        <activity android:name=".activities.ChangesetActivity" />
+        <activity android:name=".activities.SourceBrowserActivity"
+            android:theme="@style/Theme.Bitbeaker"
+            android:parentActivityName=".activities.RepositoryActivity">
+        </activity>
+        <activity android:name=".activities.WikiActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".activities.RepositoryActivity">
+        </activity>
+        <activity android:name=".activities.SourceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="https"
+                    android:host="bitbucket.org"
+                    android:pathPattern="/.*/.*/src/.*/.*" />
+                <data
+                    android:scheme="https"
+                    android:host="bitbucket.org"
+                    android:pathPattern="/.*/.*/raw/.*/.*" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.ChangesetListActivity"
+            android:parentActivityName=".activities.RepositoryActivity">
+        </activity>
+        <activity android:name=".activities.DiffActivity" />
+        <activity
+            android:name=".activities.IssuesActivity"
+            android:parentActivityName=".activities.RepositoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="https"
+                    android:host="bitbucket.org"
+                    android:pathPattern="/.*/.*/issues" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.NewIssueActivity"
+            android:parentActivityName=".activities.IssuesActivity">
+        </activity>
+        <activity android:name=".activities.IssueActivity"
+            android:parentActivityName=".activities.IssuesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="https"
+                    android:host="bitbucket.org"
+                    android:pathPattern="/.*/.*/issues/.*" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.NewIssueCommentActivity">
+            android:parentActivityName=".activities.IssueActivity">
+        </activity>
+        <activity android:name=".activities.UpdateIssueActivity"
+            android:parentActivityName=".activities.IssueActivity">
+        </activity>
+        <activity android:name=".activities.RepositoryFollowersActivity"
+            android:parentActivityName=".activities.RepositoryActivity">
+        </activity>
+        <activity android:name=".activities.PullRequestActivity"
+            android:parentActivityName=".activities.RepositoryActivity">
+        </activity>
+        <activity android:name=".activities.PullRequestCommentActivity"
+            android:parentActivityName=".activities.PullRequestActivity">
+        </activity>
+        <activity android:name=".activities.MilestonesActivity"
+            android:theme="@style/Theme.Bitbeaker"/>
+        <activity android:name=".activities.IssueContainerDetailsActivity"
+            android:theme="@style/Theme.Bitbeaker"/>
+        <activity android:name=".activities.DownloadsActivity"
+            android:parentActivityName=".activities.RepositoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.RepositoryActivity" />
+        </activity>
+
+        <activity android:name=".activities.SearchableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+
+        <activity android:name=".activities.SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.NOTIFICATION_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.UserProfileActivity" />
+
+        <service
+            android:name=".account.AuthenticatorService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <service
+            android:name=".sync.SyncService"
+            android:exported="false"
+            android:process=":sync">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
+        <service
+            android:name=".network.RestService"
+            android:exported="false" />
+        <service
+            android:name=".network.RssService"
+            android:exported="false" />
+        <provider
+            android:name=".provider.BitbeakerProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:syncable="true" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/share_authority"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+</manifest>

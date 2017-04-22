@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14.1'
+}
+
+def getMercurialHash() {
+    def os = new ByteArrayOutputStream()
+    exec {
+        commandLine 'hg id -i'.split()
+        standardOutput = os;
+    }
+    return os.toString().replaceAll("\\s", "")
+}
+
+ext.isContinuousIntegration = "true".equals(System.getenv("CI"))

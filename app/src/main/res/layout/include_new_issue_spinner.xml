@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/include_new_issue">
+
+    <!-- Assignee -->
+    <TextView
+        android:id="@+id/AssigneeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_assignee"
+        android:text="@string/issueResponsible" />
+
+    <EditText
+        android:id="@id/new_issue_assignee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/issueResponsibleHint"
+        android:inputType="text" />
+    <!-- TODO: replace EditText with Spinner when all data required is available from API
+    <Spinner
+        android:id="@id/new_issue_assignee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />-->
+    <!-- TODO: Checkbox "Assign to me" which disables this Spinner -->
+
+    <!-- Issue status -->
+    <TextView
+        android:id="@+id/StatusLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_status"
+        android:text="@string/status" />
+
+    <Spinner
+        android:id="@id/new_issue_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <!-- Issue type -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_type"
+        android:text="@string/type" />
+
+    <Spinner
+        android:id="@id/new_issue_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <!-- Issue priority -->
+    <TextView
+        android:id="@+id/PriorityLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_priority"
+        android:text="@string/priority" />
+
+    <Spinner
+        android:id="@id/new_issue_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <!-- Issue Component -->
+    <TextView
+        android:id="@+id/component_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_component"
+        android:visibility="gone"
+        android:text="@string/component"
+        tools:visibility="visible" />
+
+    <Spinner
+        android:id="@id/new_issue_component"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <!-- Issue Milestone -->
+    <TextView
+        android:id="@+id/milestone_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_milestone"
+        android:visibility="gone"
+        android:text="@string/milestone"
+        tools:visibility="visible" />
+
+    <Spinner
+        android:id="@id/new_issue_milestone"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        tools:visibility="visible"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+    <!-- Issue Version -->
+    <TextView
+        android:id="@+id/version_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        android:labelFor="@+id/new_issue_version"
+        android:visibility="gone"
+        android:text="@string/version" />
+
+    <Spinner
+        android:id="@id/new_issue_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+
+</merge>

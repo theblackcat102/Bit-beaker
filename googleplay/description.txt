@@ -1,0 +1,20 @@
+The Bitbucket client: open source since 2011
+
+Bitbeaker is an open source Bitbucket client for Android. If you have found a bug or just want a new feature, please report it to https://bitbucket.org/bitbeaker-dev-team/bitbeaker instead of writing it into reviews. It helps the community to actually fix the problems. Of course you can also contribute directly using pull requests.
+
+
+Bitbeaker Features:
+
+- Supports both public and private repositories
+- Uses OAuth authentication
+- Source browser with syntax highlighting
+- Manage issues: create, edit, view and comment
+- Newsfeed
+- Browse Wiki
+- Browse tags
+- Browse branches
+- List past and present pull requests
+- Receive notifications from selected repositories
+- Capture Bitbucket links
+
+Note: This app is neither a full Git nor Mercurial client. It uses Bitbucket's REST API instead.

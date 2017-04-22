@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- suppress AndroidDomInspection -->
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bitbeaker_primary"
+    >
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/drawer_header"
+        app:layout_widthPercent="100%"
+        app:layout_aspectRatio="178%"
+        tools:ignore="ContentDescription"
+        />
+
+</android.support.percent.PercentFrameLayout>

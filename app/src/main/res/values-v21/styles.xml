@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FloatingActionButton" parent="BaseFloatingActionButton">
+        <item name="android:elevation">@dimen/fab_elevation</item>
+        <item name="android:stateListAnimator">@anim/fab_press</item>
+    </style>
+
+</resources>

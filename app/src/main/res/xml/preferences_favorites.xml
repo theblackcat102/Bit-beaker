@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/prefs_category_favorites">
+
+        <fi.iki.kuitsi.bitbeaker.preferences.DialogPreference
+            android:title="@string/prefs_favoritesResetTitle"
+            android:dialogTitle="@string/prefs_favoritesResetTitle"
+            android:dialogMessage="@string/prefs_favoritesResetSummary"
+            android:positiveButtonText="@string/dialog_yes"
+            android:negativeButtonText="@string/dialog_no"
+            android:key="favorites_reset"
+            android:persistent="false"
+            />
+
+        <fi.iki.kuitsi.bitbeaker.preferences.DialogPreference
+            android:title="@string/prefs_favorites_import_title"
+            android:dialogTitle="@string/prefs_favorites_import_title"
+            android:positiveButtonText="@string/dialog_yes"
+            android:negativeButtonText="@string/dialog_no"
+            android:key="favorites_import"
+            android:persistent="false"
+            />
+
+        <fi.iki.kuitsi.bitbeaker.preferences.DialogPreference
+            android:title="@string/prefs_favorites_export_title"
+            android:dialogTitle="@string/prefs_favorites_export_title"
+            android:positiveButtonText="@string/dialog_yes"
+            android:negativeButtonText="@string/dialog_no"
+            android:key="favorites_export"
+            android:persistent="false"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

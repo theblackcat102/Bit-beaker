@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/prefs_category_ui">
+
+        <android.support.v7.preference.EditTextPreference
+            android:title="@string/prefs_newsfeed_token"
+            android:key="newsfeedToken"
+        />
+
+        <fi.iki.kuitsi.bitbeaker.preferences.LocalePreference
+            android:key="locale_override"
+            android:title="@string/prefs_locale_title"
+            android:summary="@string/prefs_locale_summary"
+            android:dialogTitle="@string/prefs_locale_dialog_title"
+        />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

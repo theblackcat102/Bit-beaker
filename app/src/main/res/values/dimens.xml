@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Material design metrics & keylines -->
+    <dimen name="keyline_margin">16dp</dimen>
+    <dimen name="keyline_content_start">72dp</dimen>
+    <dimen name="margin_content_distance">56dp</dimen>
+
+    <dimen name="avatar_width">40dp</dimen>
+    <dimen name="indeterminate_progress_size">32dp</dimen>
+    <dimen name="grid_spacing">4dp</dimen>
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_minor">8dp</dimen>
+    <dimen name="spacing_major">16dp</dimen>
+    <dimen name="drawer_width">280dp</dimen>
+    <dimen name="drawer_max_width">400dp</dimen>
+    <dimen name="fab_size">56dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_press_translation_z">12dp</dimen>
+</resources>
