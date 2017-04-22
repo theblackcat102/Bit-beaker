@@ -5,6 +5,8 @@
 Licensed under the Apache License, Version 2.0. For complete licensing information
 and list of third party libraries used in this project, see [LICENSE.md](LICENSE.md).
 
+Original repo : https://bitbucket.org/bitbeaker-dev-team/bitbeaker
+Import to github for my own tweak use
 
 ## BUGS AND FEATURES
 
